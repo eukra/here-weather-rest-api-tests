@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Here Weather" parallel="tests" thread-count="1">
+    <test name="WeatherConditionsForCity" preserve-order="true">
+        <classes>
+            <class name="test.city.WeatherConditionsForCity"/>
+        </classes>
+    </test>
+    <test name="WeatherAtSpecifiedCoordinatesOneObservation" preserve-order="true">
+        <classes>
+            <class name="test.gps.WeatherConditionsByCoordinates">
+                <methods>
+                    <include name="getWeatherAtSpecifiedCoordinatesOneObservation" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="WeatherAtSpecifiedCoordinatesMultipleObservations" preserve-order="true">
+        <classes>
+            <class name="test.gps.WeatherConditionsByCoordinates">
+                <methods>
+                    <include name="getWeatherAtSpecifiedCoordinatesMultipleObservations" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
